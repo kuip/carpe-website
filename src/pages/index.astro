@@ -1,0 +1,459 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const appStoreUrl = 'https://apps.apple.com/';
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.carpe';
+---
+
+<BaseLayout
+  title="Carpe!"
+  description="Capture structured field data with local databases, BLE automations, code scans, NFC tags, and record-level cryptographic integrity."
+>
+  <Fragment slot="default">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'MobileApplication',
+            name: 'Carpe!',
+            operatingSystem: 'iOS, Android',
+            applicationCategory: 'BusinessApplication',
+            description:
+              'Capture structured field data with local databases, BLE automations, code scans, NFC tags, and record-level cryptographic integrity.',
+            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            installUrl: appStoreUrl,
+            author: { '@type': 'Organization', name: 'Kuip Limited' },
+          },
+          {
+            '@type': 'WebSite',
+            name: 'Carpe!',
+            url: 'https://carpe.provable.dev',
+          },
+        ],
+      })}
+    />
+  </Fragment>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="hero-badge">Local-first mobile data capture</div>
+      <h1>Build records you can trust.</h1>
+      <p class="hero-sub">
+        Carpe! turns a phone into a structured field-data system: local databases,
+        BLE sensor ingestion, QR and barcode scanning, NFC tags, GPS capture, and
+        record-level cryptographic integrity.
+      </p>
+      <div class="hero-cta">
+        <a href={appStoreUrl} class="btn btn-primary">Download on the App Store</a>
+        <a href={playStoreUrl} class="btn btn-outline">Get it on Google Play</a>
+      </div>
+      <p class="hero-note">
+        Designed for inspections, asset workflows, chain-of-custody records, research
+        capture, and sensor-backed operations.
+      </p>
+    </div>
+
+    <div class="hero-panel">
+      <div class="device-card">
+        <div class="device-head">
+          <img src="/icons/carpe.png" alt="Carpe! icon" width="52" height="52" />
+          <div>
+            <strong>science1.nexus_timeline</strong>
+            <p>Unified event capture with proof material</p>
+          </div>
+        </div>
+        <div class="device-list">
+          <div><span>09:00:15</span><b>BLE</b><em>temperature_c = 4.7</em></div>
+          <div><span>09:00:16</span><b>QR</b><em>asset_code = BX-4012</em></div>
+          <div><span>09:00:18</span><b>NFC</b><em>tag = 04:AF:98:21</em></div>
+          <div><span>09:00:22</span><b>GPS</b><em>48.8566, 2.3522</em></div>
+          <div><span>09:00:24</span><b>HASH</b><em>s32_hashes +1</em></div>
+        </div>
+        <div class="device-footer">
+          <span>local SQLite</span>
+          <span>record-level integrity</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Same device, two jobs: capture data and prove integrity</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Build local databases fast</h3>
+          <p>Create databases, tables, and field types directly on the device so teams can start collecting structured data without a backend.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Capture from forms and sensors</h3>
+          <p>Mix manual entry with QR codes, barcodes, NFC tags, GPS coordinates, attachments, and BLE sensor readings in the same workflow.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Automate BLE inserts</h3>
+          <p>Configure BLE automations with polling or notifications, decoder mapping, and direct writes into your chosen table.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Keep data on-device</h3>
+          <p>Carpe! is local-first. Records stay on the hardware unless the user explicitly exports or integrates them into another workflow.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Verify at record level</h3>
+          <p>Each insert can produce cryptographic proof material so tables become tamper-evident over time instead of merely editable logs.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Demo and pilot quickly</h3>
+          <p>Ideal for inspections, asset tracking, sensor logging, research capture, and operational teams exploring verifiable data collection.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <div class="container">
+      <h2>Workflow views</h2>
+      <div class="carousel">
+        <article class="shot-card tone-green">
+          <div class="shot-top">Placeholder</div>
+          <h3>Manual insert screenshot</h3>
+          <p>Replace this card with an exported screen that shows form-driven record capture.</p>
+        </article>
+        <article class="shot-card tone-sand">
+          <div class="shot-top">Placeholder</div>
+          <h3>BLE automation screenshot</h3>
+          <p>Replace this card with a screen that shows device selection, decoding, and field mapping.</p>
+        </article>
+        <article class="shot-card tone-ink">
+          <div class="shot-top">Placeholder</div>
+          <h3>Internals screenshot</h3>
+          <p>Replace this card with the notarization or audit view for `dtypes`, `levels`, or `s32_hashes`.</p>
+        </article>
+        <article class="shot-card tone-amber">
+          <div class="shot-top">Placeholder</div>
+          <h3>Table browser screenshot</h3>
+          <p>Replace this card with a table view that shows live inserts, sorting, and record browsing.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="audience">
+    <div class="container audience-grid">
+      <div>
+        <h2>Built for operational teams that need believable data</h2>
+        <ul>
+          <li>Inspection and compliance workflows</li>
+          <li>Asset tracking and chain-of-custody records</li>
+          <li>Environmental and temperature monitoring</li>
+          <li>Research and experimental data capture</li>
+          <li>Field ops that combine sensors with human input</li>
+        </ul>
+      </div>
+      <div class="quote-card">
+        <p>
+          “Carpe! is for teams who want the simplicity of mobile data capture
+          without giving up on auditability.”
+        </p>
+        <span>Local databases. BLE automations. Tamper-evident records.</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 76px 24px 54px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: var(--accent-wash);
+    color: var(--accent);
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    margin-bottom: 18px;
+  }
+
+  .hero-sub,
+  .hero-note {
+    max-width: 640px;
+    color: var(--muted);
+    font-size: 1.08rem;
+  }
+
+  .hero-sub {
+    margin-bottom: 24px;
+  }
+
+  .hero-note {
+    margin-top: 18px;
+    font-size: 0.98rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: #fff;
+    box-shadow: 0 18px 36px rgba(16, 33, 31, 0.18);
+  }
+
+  .btn-outline {
+    color: var(--ink);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .hero-panel {
+    position: relative;
+  }
+
+  .device-card {
+    padding: 22px;
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(252,250,244,0.92));
+    border: 1px solid rgba(16, 33, 31, 0.08);
+    box-shadow: var(--shadow);
+    transform: rotate(1.2deg);
+  }
+
+  .device-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .device-head p {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .device-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .device-list div {
+    display: grid;
+    grid-template-columns: 72px 54px 1fr;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(16, 33, 31, 0.04);
+    font-size: 0.94rem;
+  }
+
+  .device-list span {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .device-list b {
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+
+  .device-list em {
+    font-style: normal;
+  }
+
+  .device-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .features,
+  .screenshots,
+  .audience {
+    padding: 68px 0;
+  }
+
+  .features h2,
+  .screenshots h2,
+  .audience h2 {
+    margin-bottom: 28px;
+    font-size: clamp(2rem, 3vw, 3rem);
+    letter-spacing: -0.04em;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .feature-card {
+    padding: 24px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(16, 33, 31, 0.05);
+  }
+
+  .feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  .feature-card p {
+    color: var(--muted);
+  }
+
+  .carousel {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .shot-card {
+    min-height: 280px;
+    padding: 24px;
+    border-radius: 26px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    box-shadow: 0 16px 34px rgba(16, 33, 31, 0.14);
+  }
+
+  .shot-top {
+    margin-bottom: auto;
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.88;
+  }
+
+  .shot-card h3 {
+    font-size: 1.35rem;
+    letter-spacing: -0.03em;
+  }
+
+  .shot-card p {
+    color: rgba(255,255,255,0.84);
+  }
+
+  .tone-green {
+    background: linear-gradient(180deg, #0f8f74, #0d5c51);
+  }
+
+  .tone-sand {
+    background: linear-gradient(180deg, #d6a65d, #9f6932);
+  }
+
+  .tone-ink {
+    background: linear-gradient(180deg, #243d39, #10211f);
+  }
+
+  .tone-amber {
+    background: linear-gradient(180deg, #f29a38, #b8671d);
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 22px;
+    align-items: start;
+  }
+
+  .audience ul {
+    padding-left: 22px;
+    color: var(--muted);
+  }
+
+  .audience li + li {
+    margin-top: 8px;
+  }
+
+  .quote-card {
+    padding: 28px;
+    border-radius: 26px;
+    background: rgba(16, 33, 31, 0.92);
+    color: #f7f5ef;
+    box-shadow: var(--shadow);
+  }
+
+  .quote-card p {
+    font-size: 1.4rem;
+    line-height: 1.35;
+    margin-bottom: 18px;
+  }
+
+  .quote-card span {
+    color: rgba(247, 245, 239, 0.72);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 920px) {
+    .hero,
+    .audience-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 56px;
+    }
+
+    .feature-grid,
+    .carousel {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

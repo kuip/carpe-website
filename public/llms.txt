@@ -1,0 +1,31 @@
+# Carpe!
+
+> Record-level cryptographic integrity for mobile data capture. Build local databases, ingest BLE sensor data, scan codes and tags, and create tamper-evident records.
+
+Carpe! is a mobile app for iOS and Android developed by Kuip Limited. It helps teams capture structured field data into local databases while generating cryptographic proof material for record integrity.
+
+## Key Features
+
+- **Local-first databases**: Create and manage SQLite-backed databases and tables directly on-device.
+- **Flexible record capture**: Collect text, timestamps, GPS coordinates, QR codes, barcodes, NFC tag values, and attachments through configurable forms.
+- **BLE ingestion**: Connect compatible Bluetooth Low Energy devices and write readings directly into database records through automations.
+- **Tamper-evident records**: Carpe! computes cryptographic proof material as records are inserted, creating auditable integrity trails at record level.
+- **Automation workflows**: Configure BLE reads, decoders, cron schedules, and field mappings without a custom backend.
+- **Works offline**: Data stays on the device unless the user explicitly exports it or integrates it into their own workflow.
+
+## Use Cases
+
+- Inspections and field operations
+- Asset tracking and chain-of-custody workflows
+- Sensor logging and environmental monitoring
+- Research capture and structured data collection
+- Operational record systems that need verifiable integrity
+
+## Links
+
+- Website: https://carpe.provable.dev
+- App Store: https://apps.apple.com/
+- Google Play: https://play.google.com/store/apps/details?id=com.carpe.carpe
+- Privacy Policy: https://carpe.provable.dev/privacy
+- Terms of Service: https://carpe.provable.dev/terms
+- Delete Account: https://carpe.provable.dev/delete-account
