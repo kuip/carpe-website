@@ -24,8 +24,8 @@ Carpe! is a mobile app for iOS and Android developed by Kuip Limited. It helps t
 ## Links
 
 - Website: https://carpe.provable.dev
-- App Store: https://apps.apple.com/
-- Google Play: https://play.google.com/store/apps/details?id=com.carpe.carpe
+- App Store: https://apps.apple.com/app/id6761666869
+- Google Play: https://play.google.com/store/apps/details?id=dev.provable.carpe
 - Privacy Policy: https://carpe.provable.dev/privacy
 - Terms of Service: https://carpe.provable.dev/terms
 - Delete Account: https://carpe.provable.dev/delete-account

@@ -54,7 +54,7 @@ const ogImage = new URL('/og-carpe.png', Astro.site);
 
     <footer>
       <div class="footer-inner">
-        <p>&copy; {new Date().getFullYear()} Kuip Limited. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Kuip Limited. All rights reserved. <a href="mailto:contact@mail.provable.dev">contact@mail.provable.dev</a></p>
         <div class="footer-links">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
@@ -187,6 +187,11 @@ const ogImage = new URL('/og-carpe.png', Astro.site);
   .footer-inner p {
     color: var(--muted);
     font-size: 0.95rem;
+  }
+
+  .footer-inner p a {
+    color: var(--accent);
+    text-decoration: none;
   }
 
   .footer-links {

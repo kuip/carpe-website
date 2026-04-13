@@ -1,8 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const appStoreUrl = 'https://apps.apple.com/';
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.carpe';
+const appStoreUrl = 'https://apps.apple.com/app/id6761666869';
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=dev.provable.carpe';
+const heroVideos = [
+  {
+    id: 'PaZRQqWXBtI',
+    eyebrow: 'Assets and scans',
+    title: 'Data integrity proofs for real-world assets',
+    description:
+      'NFC/RFID, QR codes, and barcodes captured directly into database records with proof material.',
+  },
+  {
+    id: 'u4pYbgu3GVY',
+    eyebrow: 'BLE ingestion',
+    title: 'Tamper-evident data ingestion from BLE devices',
+    description:
+      'Sensor payloads flow into records with decoding, mapping, and integrity tracking at insert time.',
+  },
+  {
+    id: 'EuwNDeDu9Ao',
+    eyebrow: 'Any database',
+    title: 'Record-level cryptographic integrity',
+    description:
+      'Create local databases and generate cryptographic proofs for every record as it is written.',
+  },
+];
 ---
 
 <BaseLayout
@@ -38,7 +61,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
 
   <section class="hero">
     <div class="hero-copy">
-      <div class="hero-badge">Local-first mobile data capture</div>
+      <div class="hero-badge">Tamper-evident mobile & desktop data capture</div>
       <h1>Build records you can trust.</h1>
       <p class="hero-sub">
         Carpe! turns a phone into a structured field-data system: local databases,
@@ -48,6 +71,8 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
       <div class="hero-cta">
         <a href={appStoreUrl} class="btn btn-primary">Download on the App Store</a>
         <a href={playStoreUrl} class="btn btn-outline">Get it on Google Play</a>
+        <span class="btn btn-disabled" data-tooltip="coming soon" tabindex="0" aria-disabled="true">Download for macOS</span>
+        <span class="btn btn-disabled" data-tooltip="coming soon" tabindex="0" aria-disabled="true">Download for Windows</span>
       </div>
       <p class="hero-note">
         Designed for inspections, asset workflows, chain-of-custody records, research
@@ -56,24 +81,35 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
     </div>
 
     <div class="hero-panel">
-      <div class="device-card">
-        <div class="device-head">
-          <img src="/icons/carpe.png" alt="Carpe! icon" width="52" height="52" />
+      <div class="hero-video-shell carousel-shell">
+        <div class="hero-video-head carousel-header">
           <div>
-            <strong>science1.nexus_timeline</strong>
-            <p>Unified event capture with proof material</p>
+            <strong>See Carpe! in action</strong>
+          </div>
+          <div class="carousel-controls">
+            <button type="button" class="carousel-button" data-carousel-target="hero-video-track" data-direction="prev" aria-label="Previous video">‹</button>
+            <button type="button" class="carousel-button" data-carousel-target="hero-video-track" data-direction="next" aria-label="Next video">›</button>
           </div>
         </div>
-        <div class="device-list">
-          <div><span>09:00:15</span><b>BLE</b><em>temperature_c = 4.7</em></div>
-          <div><span>09:00:16</span><b>QR</b><em>asset_code = BX-4012</em></div>
-          <div><span>09:00:18</span><b>NFC</b><em>tag = 04:AF:98:21</em></div>
-          <div><span>09:00:22</span><b>GPS</b><em>48.8566, 2.3522</em></div>
-          <div><span>09:00:24</span><b>HASH</b><em>s32_hashes +1</em></div>
-        </div>
-        <div class="device-footer">
-          <span>local SQLite</span>
-          <span>record-level integrity</span>
+        <div class="hero-video-track carousel-track" id="hero-video-track">
+          {heroVideos.map((video) => (
+            <article class="hero-video-card carousel-card video-card">
+              <div class="hero-video-frame">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}`}
+                  title={video.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="hero-video-meta">
+                <div class="hero-video-eyebrow">{video.eyebrow}</div>
+                <h3>{video.title}</h3>
+                <p>{video.description}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </div>
@@ -81,7 +117,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
 
   <section class="features">
     <div class="container">
-      <h2>Same device, two jobs: capture data and prove integrity</h2>
+      <h2>Data integrity infrastructure. Customizable.</h2>
       <div class="feature-grid">
         <article class="feature-card">
           <h3>Build local databases fast</h3>
@@ -111,38 +147,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
     </div>
   </section>
 
-  <section class="screenshots">
-    <div class="container">
-      <h2>Workflow views</h2>
-      <div class="carousel">
-        <article class="shot-card tone-green">
-          <div class="shot-top">Placeholder</div>
-          <h3>Manual insert screenshot</h3>
-          <p>Replace this card with an exported screen that shows form-driven record capture.</p>
-        </article>
-        <article class="shot-card tone-sand">
-          <div class="shot-top">Placeholder</div>
-          <h3>BLE automation screenshot</h3>
-          <p>Replace this card with a screen that shows device selection, decoding, and field mapping.</p>
-        </article>
-        <article class="shot-card tone-ink">
-          <div class="shot-top">Placeholder</div>
-          <h3>Internals screenshot</h3>
-          <p>Replace this card with the notarization or audit view for `dtypes`, `levels`, or `s32_hashes`.</p>
-        </article>
-        <article class="shot-card tone-amber">
-          <div class="shot-top">Placeholder</div>
-          <h3>Table browser screenshot</h3>
-          <p>Replace this card with a table view that shows live inserts, sorting, and record browsing.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="audience">
     <div class="container audience-grid">
       <div>
-        <h2>Built for operational teams that need believable data</h2>
+        <h2>Built for critical data</h2>
         <ul>
           <li>Inspection and compliance workflows</li>
           <li>Asset tracking and chain-of-custody records</li>
@@ -151,15 +159,33 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
           <li>Field ops that combine sensors with human input</li>
         </ul>
       </div>
-      <div class="quote-card">
-        <p>
-          “Carpe! is for teams who want the simplicity of mobile data capture
-          without giving up on auditability.”
-        </p>
-        <span>Local databases. BLE automations. Tamper-evident records.</span>
-      </div>
+      <a class="quote-card provable-card" href="https://provable.dev">
+        <p>Explore more products at provable.dev</p>
+        <span>See the broader product line for timestamping, integrity proofs, and verifiable workflows.</span>
+      </a>
     </div>
   </section>
+
+  <script is:inline>
+    (() => {
+      const buttons = document.querySelectorAll('[data-carousel-target]');
+      for (const button of buttons) {
+        button.addEventListener('click', () => {
+          const targetId = button.getAttribute('data-carousel-target');
+          const direction = button.getAttribute('data-direction');
+          if (!targetId || !direction) return;
+          const track = document.getElementById(targetId);
+          if (!track) return;
+          const firstCard = track.querySelector('.carousel-card');
+          const cardWidth = firstCard instanceof HTMLElement
+            ? firstCard.getBoundingClientRect().width + 16
+            : track.clientWidth * 0.9;
+          const offset = direction === 'next' ? cardWidth : -cardWidth;
+          track.scrollBy({ left: offset, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
 </BaseLayout>
 
 <style>
@@ -245,79 +271,157 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
     background: rgba(255, 255, 255, 0.78);
   }
 
+  .btn-disabled {
+    position: relative;
+    color: rgba(16, 33, 31, 0.48);
+    border: 1px dashed rgba(16, 33, 31, 0.18);
+    background: rgba(255, 255, 255, 0.42);
+    cursor: not-allowed;
+  }
+
+  .btn-disabled::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%) translateY(4px);
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: rgba(16, 33, 31, 0.94);
+    color: #fff;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    box-shadow: 0 12px 24px rgba(16, 33, 31, 0.18);
+  }
+
+  .btn-disabled:hover::after,
+  .btn-disabled:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
   .hero-panel {
     position: relative;
   }
 
-  .device-card {
-    padding: 22px;
+  .hero-video-shell {
+    padding: 20px;
     border-radius: 28px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(252,250,244,0.92));
+    background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(252,250,244,0.94));
     border: 1px solid rgba(16, 33, 31, 0.08);
     box-shadow: var(--shadow);
-    transform: rotate(1.2deg);
   }
 
-  .device-head {
+  .hero-video-head {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
-  .device-head p {
+  .hero-video-head p {
     color: var(--muted);
     font-size: 0.92rem;
+    max-width: 24rem;
   }
 
-  .device-list {
-    display: grid;
-    gap: 10px;
-  }
-
-  .device-list div {
-    display: grid;
-    grid-template-columns: 72px 54px 1fr;
-    gap: 10px;
-    padding: 12px 14px;
-    border-radius: 14px;
-    background: rgba(16, 33, 31, 0.04);
-    font-size: 0.94rem;
-  }
-
-  .device-list span {
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .device-list b {
-    color: var(--accent);
-    letter-spacing: 0.02em;
-  }
-
-  .device-list em {
-    font-style: normal;
-  }
-
-  .device-footer {
+  .carousel-controls {
     display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 18px;
-    color: var(--muted);
-    font-size: 0.88rem;
+    gap: 10px;
+  }
+
+  .carousel-button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(16, 33, 31, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--ink);
+    font: inherit;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  .carousel-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .carousel-track::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .carousel-track::-webkit-scrollbar-thumb {
+    background: rgba(16, 33, 31, 0.18);
+    border-radius: 999px;
+  }
+
+  .hero-video-card {
+    scroll-snap-align: start;
+    min-height: 100%;
+    padding: 0;
+    gap: 0;
+    border-radius: 22px;
+    overflow: hidden;
+    background: rgba(16, 33, 31, 0.04);
+    border: 1px solid rgba(16, 33, 31, 0.08);
+  }
+
+  .hero-video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #10211f;
+  }
+
+  .hero-video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .hero-video-meta {
+    padding: 18px 18px 20px;
+  }
+
+  .hero-video-eyebrow {
+    margin-bottom: 8px;
+    color: var(--accent);
+    font-size: 0.84rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  .hero-video-meta h3 {
+    font-size: 1.22rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-video-meta p {
+    color: var(--muted);
+    font-size: 0.96rem;
   }
 
   .features,
-  .screenshots,
   .audience {
     padding: 68px 0;
   }
 
   .features h2,
-  .screenshots h2,
   .audience h2 {
     margin-bottom: 28px;
     font-size: clamp(2rem, 3vw, 3rem);
@@ -347,59 +451,6 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
     color: var(--muted);
   }
 
-  .carousel {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(240px, 1fr));
-    gap: 18px;
-    overflow-x: auto;
-    padding-bottom: 6px;
-  }
-
-  .shot-card {
-    min-height: 280px;
-    padding: 24px;
-    border-radius: 26px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 10px;
-    box-shadow: 0 16px 34px rgba(16, 33, 31, 0.14);
-  }
-
-  .shot-top {
-    margin-bottom: auto;
-    font-size: 0.88rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.88;
-  }
-
-  .shot-card h3 {
-    font-size: 1.35rem;
-    letter-spacing: -0.03em;
-  }
-
-  .shot-card p {
-    color: rgba(255,255,255,0.84);
-  }
-
-  .tone-green {
-    background: linear-gradient(180deg, #0f8f74, #0d5c51);
-  }
-
-  .tone-sand {
-    background: linear-gradient(180deg, #d6a65d, #9f6932);
-  }
-
-  .tone-ink {
-    background: linear-gradient(180deg, #243d39, #10211f);
-  }
-
-  .tone-amber {
-    background: linear-gradient(180deg, #f29a38, #b8671d);
-  }
-
   .audience-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -422,17 +473,26 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
     background: rgba(16, 33, 31, 0.92);
     color: #f7f5ef;
     box-shadow: var(--shadow);
+    text-decoration: none;
+    display: block;
   }
 
   .quote-card p {
     font-size: 1.4rem;
     line-height: 1.35;
     margin-bottom: 18px;
+    text-decoration: none;
   }
 
   .quote-card span {
     color: rgba(247, 245, 239, 0.72);
     font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .provable-card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
   }
 
   @media (max-width: 920px) {
@@ -451,8 +511,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.carpe.ca
       padding-top: 56px;
     }
 
-    .feature-grid,
-    .carousel {
+    .hero-video-head {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .feature-grid {
       grid-template-columns: 1fr;
     }
   }
