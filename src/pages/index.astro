@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const appStoreUrl = 'https://apps.apple.com/app/id6761666869';
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=dev.provable.carpe';
+const siteUrl = 'https://carpe.provable.dev';
+const description =
+  'Capture structured field data with local databases, BLE automations, code scans, NFC tags, and record-level cryptographic integrity.';
 const heroVideos = [
   {
     id: 'PaZRQqWXBtI',
@@ -29,8 +32,8 @@ const heroVideos = [
 ---
 
 <BaseLayout
-  title="Carpe!"
-  description="Capture structured field data with local databases, BLE automations, code scans, NFC tags, and record-level cryptographic integrity."
+  title="Carpe! | Tamper-evident mobile & desktop data capture"
+  description={description}
 >
   <Fragment slot="default">
     <script
@@ -39,20 +42,52 @@ const heroVideos = [
         '@context': 'https://schema.org',
         '@graph': [
           {
-            '@type': 'MobileApplication',
+            '@type': 'Organization',
+            '@id': `${siteUrl}/#organization`,
+            name: 'Kuip Limited',
+            url: siteUrl,
+            logo: `${siteUrl}/icons/carpe.png`,
+            email: 'contact@mail.provable.dev',
+          },
+          {
+            '@type': 'SoftwareApplication',
+            '@id': `${siteUrl}/#app`,
             name: 'Carpe!',
             operatingSystem: 'iOS, Android',
             applicationCategory: 'BusinessApplication',
-            description:
-              'Capture structured field data with local databases, BLE automations, code scans, NFC tags, and record-level cryptographic integrity.',
+            description,
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            url: siteUrl,
+            downloadUrl: [appStoreUrl, playStoreUrl],
             installUrl: appStoreUrl,
-            author: { '@type': 'Organization', name: 'Kuip Limited' },
+            featureList: [
+              'Local-first database creation on-device',
+              'BLE sensor ingestion and automation rules',
+              'QR code, barcode, and NFC/RFID capture',
+              'GPS and timestamp capture',
+              'Record-level cryptographic integrity proofs',
+            ],
+            author: { '@id': `${siteUrl}/#organization` },
+            publisher: { '@id': `${siteUrl}/#organization` },
+            sameAs: [appStoreUrl, playStoreUrl],
           },
           {
             '@type': 'WebSite',
+            '@id': `${siteUrl}/#website`,
             name: 'Carpe!',
-            url: 'https://carpe.provable.dev',
+            url: siteUrl,
+            description,
+            publisher: { '@id': `${siteUrl}/#organization` },
+          },
+          {
+            '@type': 'WebPage',
+            '@id': `${siteUrl}/#webpage`,
+            url: siteUrl,
+            name: 'Carpe!',
+            description,
+            isPartOf: { '@id': `${siteUrl}/#website` },
+            about: { '@id': `${siteUrl}/#app` },
+            primaryImageOfPage: `${siteUrl}/og-carpe.png`,
           },
         ],
       })}

@@ -1,0 +1,64 @@
+# Carpe! Full Product Brief
+
+Carpe! is a local-first mobile data capture product by Kuip Limited. It is designed for teams that need structured field data, device integrations, and record-level cryptographic integrity without depending on a custom backend.
+
+## Canonical Identity
+
+- Product name: Carpe!
+- Website: https://carpe.provable.dev
+- Company: Kuip Limited
+- Contact: contact@mail.provable.dev
+
+## Core Positioning
+
+Carpe! turns a phone into a structured data collection system. Users create databases and tables on-device, define fields, and write records manually or through integrations such as Bluetooth Low Energy devices, QR codes, barcodes, NFC/RFID tags, GPS, timestamps, and attachments. Records can include cryptographic proof material so the resulting dataset becomes tamper-evident over time.
+
+## What The Product Does
+
+- Creates local databases and tables on-device
+- Supports configurable forms for manual inserts
+- Supports BLE-driven automations that write directly into database records
+- Captures QR code and barcode scans
+- Captures NFC and RFID values where platform support permits
+- Captures timestamps and GPS coordinates
+- Stores data locally by default
+- Generates record-level cryptographic integrity material
+
+## Intended Audiences
+
+- Inspection and compliance teams
+- Asset tracking and chain-of-custody workflows
+- Environmental and temperature monitoring workflows
+- Scientific and research data capture
+- Industrial pilots that combine sensors with human-entered observations
+
+## Product Language To Prefer
+
+- "Tamper-evident mobile and desktop data capture"
+- "Local-first structured data capture"
+- "Record-level cryptographic integrity"
+- "BLE sensor ingestion into database records"
+- "Database-backed field workflows"
+
+## Product Language To Avoid
+
+- Avoid calling Carpe! a cloud-first platform
+- Avoid implying that records are automatically uploaded to a remote service
+- Avoid describing it as a generic forms app with no database model
+- Avoid claiming that macOS or Windows are fully released unless the website says so
+
+## Availability
+
+- iOS: available
+- Android: available
+- macOS: coming soon
+- Windows: coming soon
+
+## Official Links
+
+- Website: https://carpe.provable.dev
+- App Store: https://apps.apple.com/app/id6761666869
+- Google Play: https://play.google.com/store/apps/details?id=dev.provable.carpe
+- Privacy Policy: https://carpe.provable.dev/privacy
+- Terms of Service: https://carpe.provable.dev/terms
+- Delete Account: https://carpe.provable.dev/delete-account

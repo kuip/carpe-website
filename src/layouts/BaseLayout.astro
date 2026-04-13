@@ -9,8 +9,19 @@ const {
   description = 'Carpe! captures structured field data with local databases, BLE automations, and record-level cryptographic integrity.',
 } = Astro.props;
 
+const siteName = 'Carpe!';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/og-carpe.png', Astro.site);
+const llmsUrl = new URL('/llms.txt', Astro.site);
+const llmsFullUrl = new URL('/llms-full.txt', Astro.site);
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Kuip Limited',
+  url: String(Astro.site),
+  logo: String(new URL('/icons/carpe.png', Astro.site)),
+  email: 'contact@mail.provable.dev',
+};
 ---
 
 <!doctype html>
@@ -20,18 +31,35 @@ const ogImage = new URL('/og-carpe.png', Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="author" content="Kuip Limited" />
+    <meta name="application-name" content={siteName} />
+    <meta name="apple-mobile-web-app-title" content={siteName} />
+    <meta name="theme-color" content="#f6f5ef" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <link rel="alternate" type="text/plain" href={llmsUrl} title="LLMs.txt" />
+    <link rel="alternate" type="text/plain" href={llmsFullUrl} title="LLMs Full" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="Carpe!" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
   </head>
   <body>
     <div class="page-noise"></div>
