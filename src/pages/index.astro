@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const appStoreUrl = 'https://apps.apple.com/app/id6761666869';
+const macAppStoreUrl = 'https://apps.apple.com/app/id6761666869?platform=mac';
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=dev.provable.carpe';
 const siteUrl = 'https://carpe.provable.dev';
 const description =
@@ -53,12 +54,12 @@ const heroVideos = [
             '@type': 'SoftwareApplication',
             '@id': `${siteUrl}/#app`,
             name: 'Carpe!',
-            operatingSystem: 'iOS, Android',
+            operatingSystem: 'iOS, Android, macOS',
             applicationCategory: 'BusinessApplication',
             description,
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
             url: siteUrl,
-            downloadUrl: [appStoreUrl, playStoreUrl],
+            downloadUrl: [appStoreUrl, macAppStoreUrl, playStoreUrl],
             installUrl: appStoreUrl,
             featureList: [
               'Local-first database creation on-device',
@@ -69,7 +70,7 @@ const heroVideos = [
             ],
             author: { '@id': `${siteUrl}/#organization` },
             publisher: { '@id': `${siteUrl}/#organization` },
-            sameAs: [appStoreUrl, playStoreUrl],
+            sameAs: [appStoreUrl, macAppStoreUrl, playStoreUrl],
           },
           {
             '@type': 'WebSite',
@@ -106,7 +107,7 @@ const heroVideos = [
       <div class="hero-cta">
         <a href={appStoreUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
         <span class="btn btn-disabled" data-tooltip="coming soon" tabindex="0" aria-disabled="true">Get it on Google Play</span>
-        <span class="btn btn-disabled" data-tooltip="coming soon" tabindex="0" aria-disabled="true">Download for macOS</span>
+        <a href={macAppStoreUrl} class="btn" target="_blank" rel="noopener noreferrer">Download for macOS</a>
         <span class="btn btn-disabled" data-tooltip="coming soon" tabindex="0" aria-disabled="true">Download for Windows</span>
         <span class="btn btn-disabled" data-tooltip="coming soon" tabindex="0" aria-disabled="true">Download for Ubuntu</span>
       </div>

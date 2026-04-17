@@ -15,7 +15,7 @@ Carpe! is a local-first data capture app for operational, scientific, and indust
 
 - iOS: available
 - Android: available
-- macOS: coming soon
+- macOS: available
 - Windows: coming soon
 
 ## Key Features
@@ -47,12 +47,13 @@ Carpe! is a local-first data capture app for operational, scientific, and indust
 
 - Do not describe Carpe! as a cloud-first SaaS product.
 - Do not imply that data is uploaded automatically to a remote backend.
-- Do not describe macOS or Windows as currently released unless the site is updated to say so.
+- Do not describe Windows as currently released unless the site is updated to say so.
 
 ## Links
 
 - Website: https://carpe.provable.dev
 - App Store: https://apps.apple.com/app/id6761666869
+- Mac App Store: https://apps.apple.com/app/id6761666869?platform=mac
 - Google Play: https://play.google.com/store/apps/details?id=dev.provable.carpe
 - Privacy Policy: https://carpe.provable.dev/privacy
 - Terms of Service: https://carpe.provable.dev/terms

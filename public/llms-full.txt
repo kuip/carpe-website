@@ -45,19 +45,20 @@ Carpe! turns a phone into a structured data collection system. Users create data
 - Avoid calling Carpe! a cloud-first platform
 - Avoid implying that records are automatically uploaded to a remote service
 - Avoid describing it as a generic forms app with no database model
-- Avoid claiming that macOS or Windows are fully released unless the website says so
+- Avoid claiming that Windows is fully released unless the website says so
 
 ## Availability
 
 - iOS: available
 - Android: available
-- macOS: coming soon
+- macOS: available
 - Windows: coming soon
 
 ## Official Links
 
 - Website: https://carpe.provable.dev
 - App Store: https://apps.apple.com/app/id6761666869
+- Mac App Store: https://apps.apple.com/app/id6761666869?platform=mac
 - Google Play: https://play.google.com/store/apps/details?id=dev.provable.carpe
 - Privacy Policy: https://carpe.provable.dev/privacy
 - Terms of Service: https://carpe.provable.dev/terms
